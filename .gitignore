@@ -14,3 +14,6 @@ backend_server.log
 inventory-forecast.zip
 .venv/
 venv/
+~$*.pptx
+~$*.docx
+~$*.xlsx
