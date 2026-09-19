@@ -10,10 +10,9 @@ interface OutletHealthChartProps {
 }
 
 function getBarColor(score: number): string {
-  if (score >= 80) return '#22c55e'
-  if (score >= 60) return '#eab308'
-  if (score >= 40) return '#f97316'
-  return '#ef4444'
+  const clamped = Math.max(0, Math.min(100, score))
+  const hue = (clamped / 100) * 130
+  return `hsl(${hue}, 70%, 45%)`
 }
 
 export default function OutletHealthChart({ data, height = 300 }: OutletHealthChartProps) {
